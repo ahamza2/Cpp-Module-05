@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:17:55 by haarab            #+#    #+#             */
-/*   Updated: 2024/10/16 15:13:57 by haarab           ###   ########.fr       */
+/*   Updated: 2024/04/21 18:53:02 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 
 
+class AForm;
 class Bureaucrat
 {
     private :
@@ -25,6 +26,7 @@ class Bureaucrat
 		Bureaucrat();
 		Bureaucrat(Bureaucrat const &src);
 		Bureaucrat &operator=(Bureaucrat const &src);
+		~Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
 		
 		class GradeTooHighException : public std::exception
@@ -43,11 +45,12 @@ class Bureaucrat
 			}
 		};
 
-		~Bureaucrat();
 		void increment();
 		void decrement();
 		std::string getName () ;
-		int getGrade () ;
+		int getGrade () const;
+		void signForm(AForm & form);
+		void executeForm(AForm &form)const;
 	
 };
 

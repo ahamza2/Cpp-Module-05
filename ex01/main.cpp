@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:01:46 by haarab            #+#    #+#             */
-/*   Updated: 2024/02/22 06:09:25 by haarab           ###   ########.fr       */
+/*   Updated: 2024/10/16 19:06:37 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,9 @@ int main ()
 {
 	try
 	{
-        // Bureaucrat bob("Bob", 5);
-        // Form form("Form", 2, 3);
-
-        // form.beSigned(bob);
-        // form.getSign();
-		// std::cout << form << std::endl;
-
-        // Trying to sign a form with a bureaucrat of lower grade
-        // Bureaucrat alice("Alice", 6);
-        // form.beSigned(alice);
-
-		Bureaucrat bureaucrat("hamza", 1);
-		Form form("aarab", 3, 6);
+		Bureaucrat bureaucrat("hamza", 5);
+		Form form("aarab", 6, 6);
+		std::cout << form;
 		bureaucrat.signForm(form);
 		form.beSigned(bureaucrat);
 		bureaucrat.signForm(form);

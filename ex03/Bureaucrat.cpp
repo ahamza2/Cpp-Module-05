@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:17:49 by haarab            #+#    #+#             */
-/*   Updated: 2024/10/19 16:40:42 by haarab           ###   ########.fr       */
+/*   Updated: 2024/04/21 18:59:31 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,28 +92,16 @@ std::string Bureaucrat::getName ()
 
 void Bureaucrat::signForm(AForm & form)
 {
-	try  {
-		form.beSigned(*this);
-    	std::cout << this->name << " signed "  << form.getName() << std::endl;
-	}
-	catch (std::exception &e) {
-		std::cout << this->name << " couldn’t sign "  << form.getName() << " because " << " signe form is false " << std::endl;
-    	std::cout << e.what() << std::endl;
-	}
-//   	if (form.getSign())
-//   else
-//   {
-//     	<< " signe form is false " << std::endl;
-//   }
+  if (form.getSign())
+    std::cout << this->name << " signed "  << form.getName() << std::endl;
+  else
+  {
+    std::cout << this->name << " couldn’t sign "  << form.getName() << " because "
+    	<< " signe form is false " << std::endl;
+  }
 }
 
 void	Bureaucrat::executeForm(AForm &form)const
 {
-	try {
 		form.execute(*this);
-		std::cout << this->name << " executed " << form.getName() << std::endl;
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
 }

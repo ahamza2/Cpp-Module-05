@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:17:49 by haarab            #+#    #+#             */
-/*   Updated: 2024/02/21 22:03:51 by haarab           ###   ########.fr       */
+/*   Updated: 2024/10/12 16:39:11 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Bureaucrat::Bureaucrat() : name("burea"), grade(2)
 {
 	std::cout << "default constractor Bureaucrat" << std::endl;
 }
+
 Bureaucrat::Bureaucrat(std::string nam, int grad) : name(nam)
 {
 	std::cout << "constractor Bureaucrat" << std::endl;

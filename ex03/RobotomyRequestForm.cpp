@@ -32,14 +32,18 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
-	if (getSign())
+	// std::cout << this->getSign() << " ---- " <<  executor.getGrade() << " ----- " << getExecGrade() << std::endl;
+    if (!getSign() || executor.getGrade() > getExecGrade())
 	{
-		if (executor.getGrade() > getExecGrade())
-			throw RobotomyRequestForm::GradeTooLowException();
-		std::cout << "drilling noises" << std::endl;
-		if (rand() % 2 == 0)
-			std::cout << target << " has been robotomized successfully!" << std::endl;
-		else
-			std::cout << "Robotomy failed." << std::endl;
-	}
+        throw AForm::GradeTooLowException();
+    }
+    std::cout << "drilling noises" << std::endl;
+    if (rand() % 2 == 0)
+	{
+        std::cout << target << " has been robotomized successfully!" << std::endl;
+    }
+	else
+	{
+        std::cout << "Robotomy failed." << std::endl;
+    }
 }

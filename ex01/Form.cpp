@@ -6,18 +6,18 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 22:36:07 by haarab            #+#    #+#             */
-/*   Updated: 2024/02/22 05:31:11 by haarab           ###   ########.fr       */
+/*   Updated: 2024/10/16 19:09:24 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form()
+Form::Form() : name("default"), sign(false) ,grade(3), grade_execute(5)
 {
 	std::cout << "default constractor Form" << std::endl;
 }
 
-Form::Form(std::string Name, int Grade, int Grade_execute) : name(Name)
+Form::Form(std::string Name, int Grade, int Grade_execute) : name(Name), grade(Grade), grade_execute(Grade_execute)
 {
 	std::cout << "constractor Form" << std::endl;
 	if (Grade < 1 || Grade_execute < 1)
@@ -28,14 +28,23 @@ Form::Form(std::string Name, int Grade, int Grade_execute) : name(Name)
 	{
 		throw GradeTooLowException();
 	}
-	this->grade = Grade;
-	this->grade_execute = Grade_execute;
+	// this->grade = Grade;
+	// this->grade_execute = Grade_execute;
 	this->sign = false;
 	
 }
 
+int	Form::getExecGrade()const
+{
+	return (this->grade_execute);
+}
 
-Form::Form(Form const &src)
+int	Form::get_Grade()const
+{
+	return (this->grade);
+}
+
+Form::Form(Form const &src) : grade(get_Grade()), grade_execute(getExecGrade()) 
 {
 	std::cout << "Form : copy constructor called" << std::endl;
 	*this = src;
@@ -70,7 +79,7 @@ int Form::getGrade ()
 int Form::getGrade_execute ()
 {
 	return (this->grade_execute);
-}
+}	
 
 bool Form::getSign()
 {
@@ -81,7 +90,6 @@ void Form::beSigned(Bureaucrat & bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->grade)
 	{
-		// this->sign = false;
 		throw Form::GradeTooLowException();
 	}
 	this->sign = true;

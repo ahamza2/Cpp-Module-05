@@ -13,15 +13,6 @@ class ShrubberyCreationForm : public AForm {
       	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &src);
     	virtual ~ShrubberyCreationForm();
     	void execute(const Bureaucrat& executor) const;
-		
-		class GradeTooLowException : public std::exception
-		{
-			const char* what() const throw()
-			{
-				return "lowest possible grade Shrubbery Form";
-			}
-		};
-
 
 };
 

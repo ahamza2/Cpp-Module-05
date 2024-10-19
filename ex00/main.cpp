@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:01:46 by haarab            #+#    #+#             */
-/*   Updated: 2024/02/21 22:10:57 by haarab           ###   ########.fr       */
+/*   Updated: 2024/10/16 17:03:21 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main ()
 {
 	try
 	{
+	
 		Bureaucrat bureau("hamza", 2);
 		std::cout << bureau;
 		bureau.increment();

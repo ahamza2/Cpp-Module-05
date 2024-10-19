@@ -19,14 +19,6 @@ class RobotomyRequestForm : public AForm {
 		virtual ~RobotomyRequestForm();
 
 		virtual void execute(const Bureaucrat& executor) const;
-
-		class RobotomyRequestForm : public std::exception
-		{
-			const char* what() const throw()
-			{
-				return "lowest possible grade Shrubbery Form";
-			}
-		};
   };
 
 
