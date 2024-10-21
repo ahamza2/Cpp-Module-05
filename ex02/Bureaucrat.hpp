@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:17:55 by haarab            #+#    #+#             */
-/*   Updated: 2024/04/21 18:53:02 by haarab           ###   ########.fr       */
+/*   Updated: 2024/10/20 16:35:54 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Bureaucrat
 		Bureaucrat &operator=(Bureaucrat const &src);
 		~Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
+		// void signForm(AForm & form);
 		
 		class GradeTooHighException : public std::exception
 		{

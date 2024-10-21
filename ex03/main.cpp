@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:01:46 by haarab            #+#    #+#             */
-/*   Updated: 2024/04/25 23:22:07 by haarab           ###   ########.fr       */
+/*   Updated: 2024/10/20 15:25:32 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,26 @@ int main()
 {
 	try
 	{
-		Bureaucrat bureaucrat("biro", 3);
+		Bureaucrat bureaucrat("biro", 140);
+		Bureaucrat bureaucrat1("hamza", 5);
+		Bureaucrat bureaucrat2("aarab", 4);
 		ShrubberyCreationForm shrubby("Shrubbery");
 		RobotomyRequestForm robbot("robbot");
 		PresidentialPardonForm presidential("presidential");
-		robbot.beSigned(bureaucrat);
-		shrubby.beSigned(bureaucrat);
-		presidential.beSigned(bureaucrat);
-		shrubby.execute(bureaucrat);
-		robbot.execute(bureaucrat);
-		presidential.execute(bureaucrat);
-		ShrubberyCreationForm gg("gg");
-		gg.beSigned(bureaucrat);
-		bureaucrat.signForm(gg);
+		bureaucrat.signForm(shrubby);
+		bureaucrat1.signForm(robbot);
+		bureaucrat2.signForm(presidential);
+
+		bureaucrat.executeForm(shrubby);
+		bureaucrat1.executeForm(robbot);
+		bureaucrat2.executeForm(presidential);
+		Bureaucrat bureaucrat3("aara", 4);
 		Intern intern;
 		AForm *form = intern.makeForm("PresidentialPardonForm", "Bender");
-		std::cout << "FORM NAME : " << form->getName() << std::endl;
+		bureaucrat3.signForm(*form);
+		bureaucrat3.executeForm(*form);
+
+		std::cout << "FORM NAME : " << form->getName()  << std::endl;
 	}
 	catch(const std::exception& e)
 	{

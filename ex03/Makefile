@@ -6,7 +6,7 @@
 #    By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 16:01:49 by haarab            #+#    #+#              #
-#    Updated: 2024/04/25 23:17:39 by haarab           ###   ########.fr        #
+#    Updated: 2024/10/20 13:02:34 by haarab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,6 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) *_shrubbery
 
 re: fclean all

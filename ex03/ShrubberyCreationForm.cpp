@@ -36,51 +36,54 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
 	// std::cout <<  executor.getGrade() << " ----- " << getExecGrade() << std::endl;
-	if (!getSign() || executor.getGrade() > getExecGrade())
+	// std::cout << "**** " << getSign() << std::endl;
+	if (getSign())
 	{
-        throw AForm::GradeTooLowException();
-    }
-	// // std::cout << executor.getGrade() << std::endl;
-	// std::cout << this->target << std::endl;
-    // std::ofstream file(target + "_shrubbery");
-    // if (file.is_open()) {
-    //     file << "ASCII trees" << std::endl;
-    //     file.close();
-    // } else {
-    //     throw std::runtime_error("Unable to open file");
-    // }
+		if (executor.getGrade() > getExecGrade())
+		{
+			throw ShrubberyCreationForm::GradeTooLowException();
+		}
+		// std::cout << executor.getGrade() << std::endl;
+		// std::cout << this->target << std::endl;
+		std::ofstream file(target + "_shrubbery");
+		if (file.is_open()) {
+			file << "                                                     . " << std::endl;
+			file << "                                          .         ;   " << std::endl;
+			file << "             .              .              ;%     ;;    " << std::endl;
+			file << "               ,           ,                :;%  %;    " << std::endl;
+			file << "                :         ;                   :;%;'     .,    " << std::endl;
+			file << "       ,.        %;     %;            ;        %;'    ,; " << std::endl;
+			file << "         ;       ;%;  %%;        ,     %;    ;%;    ,%' " << std::endl;
+			file << "          %;       %;%;      ,  ;       %;  ;%;   ,%;'  " << std::endl;
+			file << "           ;%;      %;        ;%;        % ;%;  ,%;' " << std::endl;
+			file << "            `%;.     ;%;     %;'         `;%%;.%;' " << std::endl;
+			file << "             `:;%.    ;%%. %@;        %; ;@%;%' " << std::endl;
+			file << "                `:%;.  :;bd%;          %;@%;' " << std::endl;
+			file << "                  `@%:.  :;%.         ;@@%;'    " << std::endl;
+			file << "                    `@%.  `;@%.      ;@@%;          " << std::endl;
+			file << "                      `@%%. `@%%    ;@@%;         " << std::endl;
+			file << "                        ;@%. :@%%  %@@%;        " << std::endl;
+			file << "                          %@bd%%%bd%%:;      " << std::endl;
+			file << "                            #@%%%%%:;; " << std::endl;
+			file << "                            %@@%%%::; " << std::endl;
+			file << "                            %@@@%(o);  . '          " << std::endl;
+			file << "                            %@@@o%;:(.,'          " << std::endl;
+			file << "                        `.. %@@@o%::;          " << std::endl;
+			file << "                           `)@@@o%::;          " << std::endl;
+			file << "                            %@@(o)::;         " << std::endl;
+			file << "                           .%@@@@%::;          " << std::endl;
+			file << "                           ;%@@@@%::;.           " << std::endl;
+			file << "                          ;%@@@@%%:;;;.  " << std::endl;
+			file << "                      ...;%@@@@@%%:;;;;,.. " << std::endl;
+			file << "haarab                                         " << std::endl;
+		
+			file.close();
+		    // file << "ASCII trees" << std::endl;
+		    // file.close();
+		} else {
+		    throw std::runtime_error("Unable to open file");
+		}
 
-
-    std::ofstream file(this->target.c_str());
-    file << "                                                     . " << std::endl;
-    file << "                                          .         ;   " << std::endl;
-    file << "             .              .              ;%     ;;    " << std::endl;
-    file << "               ,           ,                :;%  %;    " << std::endl;
-    file << "                :         ;                   :;%;'     .,    " << std::endl;
-    file << "       ,.        %;     %;            ;        %;'    ,; " << std::endl;
-    file << "         ;       ;%;  %%;        ,     %;    ;%;    ,%' " << std::endl;
-    file << "          %;       %;%;      ,  ;       %;  ;%;   ,%;'  " << std::endl;
-    file << "           ;%;      %;        ;%;        % ;%;  ,%;' " << std::endl;
-    file << "            `%;.     ;%;     %;'         `;%%;.%;' " << std::endl;
-    file << "             `:;%.    ;%%. %@;        %; ;@%;%' " << std::endl;
-    file << "                `:%;.  :;bd%;          %;@%;' " << std::endl;
-    file << "                  `@%:.  :;%.         ;@@%;'    " << std::endl;
-    file << "                    `@%.  `;@%.      ;@@%;          " << std::endl;
-    file << "                      `@%%. `@%%    ;@@%;         " << std::endl;
-    file << "                        ;@%. :@%%  %@@%;        " << std::endl;
-    file << "                          %@bd%%%bd%%:;      " << std::endl;
-    file << "                            #@%%%%%:;; " << std::endl;
-    file << "                            %@@%%%::; " << std::endl;
-    file << "                            %@@@%(o);  . '          " << std::endl;
-    file << "                            %@@@o%;:(.,'          " << std::endl;
-    file << "                        `.. %@@@o%::;          " << std::endl;
-    file << "                           `)@@@o%::;          " << std::endl;
-    file << "                            %@@(o)::;         " << std::endl;
-    file << "                           .%@@@@%::;          " << std::endl;
-    file << "                           ;%@@@@%::;.           " << std::endl;
-    file << "                          ;%@@@@%%:;;;.  " << std::endl;
-    file << "                      ...;%@@@@@%%:;;;;,.. " << std::endl;
-    file << "haarab                                         " << std::endl;
-  
-    file.close();
+		// std::ofstream file(this->target.c_str());
+	}
 }

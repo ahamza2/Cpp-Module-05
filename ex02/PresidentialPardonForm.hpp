@@ -15,6 +15,14 @@ class PresidentialPardonForm : public AForm {
 		virtual ~PresidentialPardonForm();
 
 		virtual void execute(const Bureaucrat& executor) const;
+
+		class GradeTooLowException : public std::exception
+		{
+			const char* what() const throw()
+			{
+				return "lowest possible grade Presidential Form";
+			}
+		};
   };
 
 #endif

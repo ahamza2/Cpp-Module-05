@@ -6,7 +6,7 @@
 /*   By: haarab <haarab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:17:49 by haarab            #+#    #+#             */
-/*   Updated: 2024/10/16 18:36:20 by haarab           ###   ########.fr       */
+/*   Updated: 2024/10/20 18:16:40 by haarab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Bureaucrat::Bureaucrat() : name("burea"), grade(2)
 {
 	std::cout << "default constractor Bureaucrat" << std::endl;
 }
+
 Bureaucrat::Bureaucrat(std::string Name, int Grade) : name(Name)
 {
 	std::cout << "constractor Bureaucrat" << std::endl;
@@ -91,11 +92,17 @@ std::string Bureaucrat::getName ()
 
 void Bureaucrat::signForm(Form & form)
 {
-	if (form.getSign())
-		std::cout << this->name << " signed "  << form.getName() << std::endl;
-	else
-	{
-		std::cout << this->name << " couldn’t sign "  << form.getName() << " because "
-			<< " signe form is false " << std::endl;
+	try  {
+		form.beSigned(*this);
+    	std::cout << this->name << " signed "  << form.getName() << std::endl;
 	}
+	catch (std::exception &e) {
+		std::cout << this->name << " couldn’t sign "  << form.getName() << " because " << " signe form is false " << std::endl;
+    	std::cout << e.what() << std::endl;
+	}
+//   	if (form.getSign())
+//   else
+//   {
+//     	<< " signe form is false " << std::endl;
+//   }
 }

@@ -84,7 +84,6 @@ bool AForm::getSign()
 
 void AForm::beSigned(Bureaucrat & bureaucrat)
 {
-// std::cout << " uyyuyuy" << bureaucrat.getGrade() << " ---- " << this->grade  << std::endl;
 	if (bureaucrat.getGrade() > this->grade)
 	{
 		throw AForm::GradeTooLowException();
